@@ -1,0 +1,48 @@
+<!-- 게시판 상세보기 -->
+<section class="block">
+    <div class="block_title_wrapper">
+        <h2>게시판</h2>
+    </div>
+    <div class="block_content">
+        <div class="board_detail_contents_wrapper">
+            <header>
+                <div class="detail_title"><%= detail.board_title %></div>
+                <div class="detail_sub_info">
+                    <span class="author"><%= detail.user_id %></span>
+                    <span class="reg_date"><%= detail.board_date %></span>
+                    <span class="views">조회수: 7</span>
+                </div>
+            </header>
+            <div class="contents">
+                <%= detail.board_content %>
+            </div>
+        </div>
+        <div class="board_detail_comments_wrapper">
+            <header>
+                <h3>댓글</h3>
+            </header>
+            <form action="/board/<%= detail.board_idx %>" method="POST">
+            <div class="write_comment_wrapper">
+                <textarea name="comment" placeholder="댓글을 입력해주세요. 500자 이내로 작성 가능합니다."></textarea>
+                <button type="submit">등록</button>
+            </div>
+            </form>
+            <div class="comments_wrapper">
+                <% replys.forEach((reply) => { 
+                    const author = reply.user_id;
+                    const content = reply.reply_content;
+                    const date = reply.reply_date;
+                    %> 
+                        <div class="comment">
+                            <header>
+                                <div class="comment_author" title="<%= author %>"><%= author %></div>
+                                <div class="reg_date" title="<%= date %>"><%= date %></div>
+                            </header>
+                            <div class="comment_text" title="<%= content %>"><%= content %></div>
+                        </div>
+                    <%
+                })%>
+            </div>
+        </div>
+    </div>
+</section>

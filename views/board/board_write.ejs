@@ -1,0 +1,39 @@
+<!-- 게시판 글작성 -->
+<section class="block">
+    <div class="block_title_wrapper">
+        <h2>글작성</h2>
+    </div>
+    <form action="/board/write" method="POST">
+        <div class="block_content">
+            <div class="board_write_wrapper">
+                <div class="title_wrapper">
+                    <h3>제목</h3>
+                    <div class="input_wrapper">
+                        <input type="text" name="title" />
+
+                        <!-- ADMIN -->
+                        <!-- <select name="writing_type">
+                            <option value="default">일반</option>
+                            <option value="notice">공지</option>
+                        </select>
+                        <input type="text" name="title" /> -->
+                    </div>
+                </div>
+                <div class="contents_wrapper">
+                    <h3>내용</h3>
+                    <textarea name="contents"></textarea>
+                </div>
+                <div class="button_wrapper">
+                    <a href="/board" class="go_write go_back">
+                        <i class="fas fa-caret-square-left"></i>
+                        이전으로
+                    </a>
+                    <button type="submit" class="go_write">
+                        <i class="fas fa-check-square"></i>
+                        등록하기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

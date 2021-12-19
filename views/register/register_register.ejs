@@ -1,0 +1,56 @@
+<!-- 회원가입 -->
+<section class="block">
+    <div class="block_title_wrapper">
+        <h2>회원가입</h2>
+    </div>
+    <div class="block_content">
+        <div class="register_wrapper">
+            <header>
+                <h2>정보입력</h2>
+            </header>
+            <form action="/auth/register" method="POST">
+                <main>
+                    <div class="register_row">
+                        <label for="user_name">이름</label>
+                        <input autocomplete="off" id="user_name" name="user_name" type="text" placeholder="이름을 입력해주세요." required />
+                    </div>
+                    <div class="register_row">
+                        <label for="user_email">이메일</label>
+                        <input autocomplete="off" id="user_email" name="user_email" type="email" placeholder="이메일을 입력해주세요." required />
+                    </div>
+                    <div class="register_row">
+                        <label for="user_id">아이디</label>
+                        <input autocomplete="off" id="user_id" name="user_id" type="text" placeholder="아이디를 입력해주세요." required />
+                    </div>
+                    <div class="register_row">
+                        <label for="user_password">비밀번호</label>
+                        <input autocomplete="off" id="user_password" name="user_password" type="password" placeholder="비밀번호를 입력해주세요." required />
+                    </div>
+                    <div class="register_row">
+                        <label for="user_password_check">비밀번호 확인</label>
+                        <input autocomplete="off" id="user_password_check" name="user_password_check" type="password" placeholder="비밀번호를 다시 입력해주세요." required />
+                    </div>
+
+                    <% if (alert) { 
+                        %>
+                            <div class="register_alert">비밀번호가 일치하지 않습니다.</div>
+                        <% 
+                    } %>
+
+                    <div class="register_row">
+                        <label for="user_nickname">닉네임</label>
+                        <input autocomplete="off" id="user_nickname" name="user_nickname" type="text" placeholder="닉네임을 입력해주세요." required />
+                    </div>
+                    <div class="register_row">
+                        <label for="user_phone">전화번호</label>
+                        <input autocomplete="off" id="user_phone" name="user_phone" type="text" placeholder="전화번호를 입력해주세요." required />
+                    </div>
+                </main>
+                <footer>
+                    <button href="/" class="register_button go_back">이전</button>
+                    <button type="submit" class="register_button go_register">가입완료</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+</section>

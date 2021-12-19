@@ -1,0 +1,32 @@
+<!-- Header -->
+<header class="main_header">
+    <div class="main_header_inner">
+        <div class="main_header_logo">
+            <a href="/">underpin</a>
+        </div>
+        <nav class="main_header_navigation">
+            <a href="/board" class="nav_item">업체</a>
+            <a href="/board" class="nav_item">게시판</a>
+            <a href="/board" class="nav_item">My Page</a>
+        </nav>
+        <div class="main_header_auth">
+            <% if (logined) { 
+                %>
+                    <span class="login">
+                        <a href="/auth/logout">로그아웃</a>
+                    </span>
+                <% 
+            } %>
+            <% if (!logined) { 
+                %>
+                    <span class="login">
+                        <a href="/auth/login">로그인</a>
+                    </span>
+                    <span class="resgister">
+                        <a href="/auth/register">회원가입</a>
+                    </span>
+                <% 
+            } %>
+        </div>
+    </div>
+</header>

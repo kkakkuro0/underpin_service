@@ -1,0 +1,73 @@
+<!-- 게시판 -->
+<section class="block">
+    <div class="block_title_wrapper">
+        <h2>게시판</h2>
+        <a href="/board/write" class="go_write">
+            <i class="fas fa-pen-square"></i>
+            글작성
+        </a>
+    </div>
+    <div class="block_content">
+        <div class="board_wrapper">
+            <header>
+                <div class="filter_wrapper">
+                    <div class="filter"><i class="fas fa-fire-alt"></i>인기</div>
+                    <div class="filter"><i class="fas fa-clock"></i>최신</div>
+                    <div class="filter"><i class="fas fa-thumbs-up"></i>TOP</div>
+                    <div class="filter"><i class="fas fa-volume-up"></i>공지</div>
+                </div>
+                <div class="search_wrapper">
+                    <select name="search_type">
+                        <option value="title">제목</option>
+                        <option value="author">작성자</option>
+                        <option value="all">전체</option>
+                    </select>
+                    <div class="search_input_wrapper">
+                        <input type="text" placeholder="검색" />
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <% boards.forEach((board) => { 
+                    const link = `/board/${board.board_idx}`;
+                    const title = board.board_title;
+                    const index = board.board_idx;
+                    const author = board.user_id;
+                    const date = board.board_date;
+                    %> 
+                        <a href="<%= link %>" class="board_item">
+                            <div class="number" title="<%= index %>"><%= index %></div>
+                            <div class="content_wrapper">
+                                <div class="title" title="<%= title %>"><%= title %></div>
+                                <div class="counting">
+                                    <span>조회수 <span class="pink">7</span></span>
+                                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <span>추천수 <span class="pink">7</span></span>
+                                </div>
+                            </div>
+                            <div class="sub_info">
+                                <div class="author" title="<%= author %>"><%= author %></div>
+                                <div class="reg_date" title="<%= date %>"><%= date %></div>
+                            </div>
+                        </a>
+                    <% 
+                })%>
+                <div class="pagination">
+                    <a href=""><i class="fas fa-chevron-left"></i></a>
+                    <a href="">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">4</a>
+                    <a href="">5</a>
+                    <a href="">6</a>
+                    <a href="">7</a>
+                    <a href="">8</a>
+                    <a href="">9</a>
+                    <a href="">10</a>
+                    <a href=""><i class="fas fa-chevron-right"></i></a>
+                </div>
+            </main>
+        </div>
+    </div>
+</section>

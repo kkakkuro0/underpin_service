@@ -1,0 +1,32 @@
+<!-- 로그인 -->
+<section class="block">
+    <div class="block_title_wrapper">
+        <h2>로그인</h2>
+    </div>
+    <div class="block_content">
+        <div class="login_wrapper">
+            <header>
+                <h1>LOGIN</h1>
+                <span class="greeting"><%= greeting %></span>
+            </header>
+            <form action = "/auth/login" method = "POST">
+                <main>
+                    <input class="login_input" type="text" placeholder="아이디" id= "id" name="id" required />
+                    <input class="login_input" type="password" placeholder="비밀번호" id="pw" name="pw" required />
+                    <button class="login_button" type="submit" >로그인</button>
+                    <div class="auto_login_wrapper">
+                        <!-- Rounded switch -->
+                        <label class="switch">
+                            <input id="auto_login" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <label class="auto_login_text" for="auto_login">로그인 상태 유지</label>
+                    </div>
+                </main>
+                <footer>
+                    <div>아이디 찾기 &nbsp; | &nbsp; 비밀번호 찾기 &nbsp; | &nbsp; 회원가입</div>
+                </footer>
+            </form>
+        </div>
+    </div>
+</section>
